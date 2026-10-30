@@ -1,0 +1,34 @@
+flowchart LR
+  subgraph IN["Intake channels (synthetic)"]
+    P[Provider portal] & F[Fax / OCR] & E[Email] & H[EHR export]
+  end
+  IN --> A1
+  subgraph G["LangGraph workflow (checkpointed in SQLite)"]
+    A1[intake<br/>LLM structured output<br/>or rule fallback] --> A2[validate<br/>schema, NPI Luhn, dates]
+    A2 --> A3[classify<br/>type + urgency<br/>SLA clock 72h / 7d]
+    A3 --> A4[gather_evidence<br/>LLM tool calling<br/>+ required-evidence guardrail]
+    A4 --> A5[evaluate_policy<br/>deterministic engine]
+    A5 --> A6{route<br/>rule-based}
+    A6 -->|all criteria met| O1[auto_approve]
+    A6 -->|not on PA list| O2[no_pa_required]
+    A6 -->|fixable gap| O3[request_info<br/>RFI letter]
+    A6 -->|potential denial / exception| O4[human_review<br/>interrupt]
+    O1 & O2 & O3 & O4 --> FIN[finalize]
+  end
+  subgraph GW["Tool gateway"]
+    T0[allowlist + Pydantic arg validation<br/>timeout, retry w/ backoff, audit]
+  end
+  A4 <--> GW
+  A5 <--> GW
+  GW <-->|stdio| MCP
+  subgraph MCP["MCP server: prior-auth-tools"]
+    M1[verify_provider] & M2[validate_diagnosis] & M3[normalize_drug] & M4[get_drug_label] & M5[check_pa_requirement] & M6[get_medical_policy] & M7[evaluate_policy_criteria] & M8[check_duplicate_submission]
+  end
+  M1 --> X1[(CMS NPI Registry)]
+  M2 --> X2[(NLM ICD-10-CM)]
+  M3 --> X3[(NLM RxNorm)]
+  M4 --> X4[(openFDA labels)]
+  M5 & M6 & M7 --> X5[(Plan medical policy JSON)]
+  M8 --> X6[(Case store)]
+  O4 <--> UI[Streamlit reviewer console<br/>approve / deny / pend]
+  FIN --> LOG[(Audit log: every node,<br/>tool call, reviewer action)]

@@ -1,0 +1,169 @@
+{
+ "_meta": {
+  "source": "NLM Clinical Tables ICD-10-CM API (https://clinicaltables.nlm.nih.gov/api/icd10cm/v3/search)",
+  "fetched": "2026-10-29",
+  "note": "valid=false means the exact code was not returned by the API (non-billable/obsolete/typo)."
+ },
+ "records": {
+  "M17.11": {
+   "code": "M17.11",
+   "valid": true,
+   "description": "Unilateral primary osteoarthritis, right knee"
+  },
+  "M17.12": {
+   "code": "M17.12",
+   "valid": true,
+   "description": "Unilateral primary osteoarthritis, left knee"
+  },
+  "M17.0": {
+   "code": "M17.0",
+   "valid": true,
+   "description": "Bilateral primary osteoarthritis of knee"
+  },
+  "M23.211": {
+   "code": "M23.211",
+   "valid": true,
+   "description": "Derangement of anterior horn of medial meniscus due to old tear or injury, right knee"
+  },
+  "S83.241A": {
+   "code": "S83.241A",
+   "valid": true,
+   "description": "Other tear of medial meniscus, current injury, right knee, initial encounter"
+  },
+  "M54.50": {
+   "code": "M54.50",
+   "valid": true,
+   "description": "Low back pain, unspecified"
+  },
+  "M51.16": {
+   "code": "M51.16",
+   "valid": true,
+   "description": "Intervertebral disc disorders with radiculopathy, lumbar region"
+  },
+  "C34.90": {
+   "code": "C34.90",
+   "valid": true,
+   "description": "Malignant neoplasm of unspecified part of unspecified bronchus or lung"
+  },
+  "C50.911": {
+   "code": "C50.911",
+   "valid": true,
+   "description": "Malignant neoplasm of unspecified site of right female breast"
+  },
+  "G47.33": {
+   "code": "G47.33",
+   "valid": true,
+   "description": "Obstructive sleep apnea (adult) (pediatric)"
+  },
+  "G47.30": {
+   "code": "G47.30",
+   "valid": true,
+   "description": "Sleep apnea, unspecified"
+  },
+  "M05.79": {
+   "code": "M05.79",
+   "valid": true,
+   "description": "Rheumatoid arthritis with rheumatoid factor of multiple sites without organ or systems involvement"
+  },
+  "M06.9": {
+   "code": "M06.9",
+   "valid": true,
+   "description": "Rheumatoid arthritis, unspecified"
+  },
+  "L40.0": {
+   "code": "L40.0",
+   "valid": true,
+   "description": "Psoriasis vulgaris"
+  },
+  "L40.50": {
+   "code": "L40.50",
+   "valid": true,
+   "description": "Arthropathic psoriasis, unspecified"
+  },
+  "K50.90": {
+   "code": "K50.90",
+   "valid": true,
+   "description": "Crohn's disease, unspecified, without complications"
+  },
+  "K51.90": {
+   "code": "K51.90",
+   "valid": true,
+   "description": "Ulcerative colitis, unspecified, without complications"
+  },
+  "L20.9": {
+   "code": "L20.9",
+   "valid": true,
+   "description": "Atopic dermatitis, unspecified"
+  },
+  "J45.50": {
+   "code": "J45.50",
+   "valid": true,
+   "description": "Severe persistent asthma, uncomplicated"
+  },
+  "E11.9": {
+   "code": "E11.9",
+   "valid": true,
+   "description": "Type 2 diabetes mellitus without complications"
+  },
+  "E11.65": {
+   "code": "E11.65",
+   "valid": true,
+   "description": "Type 2 diabetes mellitus with hyperglycemia"
+  },
+  "E66.01": {
+   "code": "E66.01",
+   "valid": true,
+   "description": "Morbid (severe) obesity due to excess calories"
+  },
+  "G43.709": {
+   "code": "G43.709",
+   "valid": true,
+   "description": "Chronic migraine without aura, not intractable, without status migrainosus"
+  },
+  "G43.909": {
+   "code": "G43.909",
+   "valid": true,
+   "description": "Migraine, unspecified, not intractable, without status migrainosus"
+  },
+  "I48.91": {
+   "code": "I48.91",
+   "valid": true,
+   "description": "Unspecified atrial fibrillation"
+  },
+  "Z00.00": {
+   "code": "Z00.00",
+   "valid": true,
+   "description": "Encounter for general adult medical examination without abnormal findings"
+  },
+  "R51.9": {
+   "code": "R51.9",
+   "valid": true,
+   "description": "Headache, unspecified"
+  },
+  "G35": {
+   "code": "G35",
+   "valid": false,
+   "description": null
+  },
+  "M17.99": {
+   "code": "M17.99",
+   "valid": false,
+   "description": null
+  },
+  "E11.99": {
+   "code": "E11.99",
+   "valid": false,
+   "description": null
+  },
+  "Z99.81": {
+   "code": "Z99.81",
+   "valid": true,
+   "description": "Dependence on supplemental oxygen"
+  },
+  "G12.21": {
+   "code": "G12.21",
+   "valid": true,
+   "description": "Amyotrophic lateral sclerosis"
+  }
+ }
+}

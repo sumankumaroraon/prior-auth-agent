@@ -1,0 +1,115 @@
+{
+  "requests": 120,
+  "route_distribution": {
+    "NO_PA_REQUIRED": 9,
+    "PEND_INFO": 45,
+    "HUMAN_REVIEW": 52,
+    "AUTO_APPROVE": 14
+  },
+  "routing_accuracy_pct": 66.7,
+  "routing_accuracy_by_scenario": {
+    "clean": "11/33",
+    "criteria_not_met": "6/10",
+    "duplicate": "2/4",
+    "expedited_clean": "1/7",
+    "invalid_icd": "3/5",
+    "invalid_npi": "4/5",
+    "md_review": "5/6",
+    "missing_info": "20/21",
+    "no_pa_required": "9/10",
+    "off_label_or_excluded": "11/11",
+    "specialty_mismatch": "5/5",
+    "unrecognized_drug": "3/3"
+  },
+  "confusion_matrix_expected_x_predicted": {
+    "AUTO_APPROVE": {
+      "AUTO_APPROVE": 12,
+      "NO_PA_REQUIRED": 0,
+      "PEND_INFO": 16,
+      "HUMAN_REVIEW": 12
+    },
+    "NO_PA_REQUIRED": {
+      "AUTO_APPROVE": 0,
+      "NO_PA_REQUIRED": 9,
+      "PEND_INFO": 0,
+      "HUMAN_REVIEW": 1
+    },
+    "PEND_INFO": {
+      "AUTO_APPROVE": 0,
+      "NO_PA_REQUIRED": 0,
+      "PEND_INFO": 24,
+      "HUMAN_REVIEW": 4
+    },
+    "HUMAN_REVIEW": {
+      "AUTO_APPROVE": 2,
+      "NO_PA_REQUIRED": 0,
+      "PEND_INFO": 5,
+      "HUMAN_REVIEW": 35
+    }
+  },
+  "unsafe_auto_approvals": 0,
+  "auto_approved_duplicates": 2,
+  "incorrect_auto_approval_ids": [
+    "HO-2026-00014",
+    "HO-2026-00050"
+  ],
+  "missed_auto_approvals": 28,
+  "auto_denials": 0,
+  "resolved_without_human_pct": 56.7,
+  "escalated_to_human_pct": 43.3,
+  "request_type_accuracy_pct": 81.7,
+  "urgency_accuracy_pct": 95.0,
+  "field_extraction_accuracy_pct": {
+    "npi": 100.0,
+    "member_id": 70.0,
+    "dx_codes": 70.0,
+    "service_code": 100.0,
+    "conservative_therapy_weeks": 40.0,
+    "drug_name": 67.2,
+    "prior_therapies": 40.0,
+    "ahi": 75.0,
+    "osa_symptoms": 66.7,
+    "red_flags": 0.0,
+    "hsat_inconclusive": 33.3
+  },
+  "field_extraction_overall_pct": 75.0,
+  "latency_ms": {
+    "p50": 68.8,
+    "p95": 99.5,
+    "max": 575.7
+  },
+  "tool_calls": {
+    "calls": 599,
+    "retries": 0,
+    "failures": 0,
+    "rejected": 0,
+    "injected_faults": 0,
+    "live": 0,
+    "cache": 248,
+    "recovered_by_retry": 0
+  },
+  "mcp_server_tools": [
+    "verify_provider",
+    "validate_diagnosis",
+    "normalize_drug",
+    "get_drug_label",
+    "check_pa_requirement",
+    "get_medical_policy",
+    "evaluate_policy_criteria",
+    "check_duplicate_submission"
+  ],
+  "execution_log_events": 1455,
+  "run": {
+    "mode": "rules",
+    "data_mode": "auto",
+    "transport": "mcp",
+    "fault_rate": 0.0,
+    "batch_seconds": 11.2
+  },
+  "sla": {
+    "cases_with_due_date_pct": 100.0,
+    "expedited_cases": 11,
+    "automated_decisions_within_sla_pct": 100.0,
+    "pending_human_review": 52
+  }
+}

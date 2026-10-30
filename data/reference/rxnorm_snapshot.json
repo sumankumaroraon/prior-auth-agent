@@ -1,0 +1,202 @@
+{
+ "_meta": {
+  "source": "NLM RxNav RxNorm API (https://rxnav.nlm.nih.gov/REST/rxcui.json?search=2)",
+  "fetched": "2026-10-29",
+  "note": "ingredient mapping = RxNorm has_ingredient relation for brand (BN) / precise ingredient (PIN) concepts."
+ },
+ "records": {
+  "adalimumab": {
+   "query": "adalimumab",
+   "found": true,
+   "rxcui": "327361",
+   "tty": "IN",
+   "name": "adalimumab",
+   "ingredient_rxcui": "327361",
+   "ingredient": "adalimumab"
+  },
+  "humira": {
+   "query": "Humira",
+   "found": true,
+   "rxcui": "353484",
+   "tty": "BN",
+   "name": "Humira",
+   "ingredient_rxcui": "327361",
+   "ingredient": "adalimumab"
+  },
+  "dupilumab": {
+   "query": "dupilumab",
+   "found": true,
+   "rxcui": "1876376",
+   "tty": "IN",
+   "name": "dupilumab",
+   "ingredient_rxcui": "1876376",
+   "ingredient": "dupilumab"
+  },
+  "dupixent": {
+   "query": "Dupixent",
+   "found": true,
+   "rxcui": "1876402",
+   "tty": "BN",
+   "name": "Dupixent",
+   "ingredient_rxcui": "1876376",
+   "ingredient": "dupilumab"
+  },
+  "semaglutide": {
+   "query": "semaglutide",
+   "found": true,
+   "rxcui": "1991302",
+   "tty": "IN",
+   "name": "semaglutide",
+   "ingredient_rxcui": "1991302",
+   "ingredient": "semaglutide"
+  },
+  "ozempic": {
+   "query": "Ozempic",
+   "found": true,
+   "rxcui": "1991307",
+   "tty": "BN",
+   "name": "Ozempic",
+   "ingredient_rxcui": "1991302",
+   "ingredient": "semaglutide"
+  },
+  "wegovy": {
+   "query": "Wegovy",
+   "found": true,
+   "rxcui": "2553502",
+   "tty": "BN",
+   "name": "Wegovy",
+   "ingredient_rxcui": "1991302",
+   "ingredient": "semaglutide"
+  },
+  "tirzepatide": {
+   "query": "tirzepatide",
+   "found": true,
+   "rxcui": "2601723",
+   "tty": "IN",
+   "name": "tirzepatide",
+   "ingredient_rxcui": "2601723",
+   "ingredient": "tirzepatide"
+  },
+  "mounjaro": {
+   "query": "Mounjaro",
+   "found": true,
+   "rxcui": "2601734",
+   "tty": "BN",
+   "name": "Mounjaro",
+   "ingredient_rxcui": "2601723",
+   "ingredient": "tirzepatide"
+  },
+  "erenumab": {
+   "query": "erenumab",
+   "found": true,
+   "rxcui": "2045613",
+   "tty": "IN",
+   "name": "erenumab",
+   "ingredient_rxcui": "2045613",
+   "ingredient": "erenumab"
+  },
+  "aimovig": {
+   "query": "Aimovig",
+   "found": true,
+   "rxcui": "2045628",
+   "tty": "BN",
+   "name": "Aimovig",
+   "ingredient_rxcui": "2045613",
+   "ingredient": "erenumab"
+  },
+  "ustekinumab": {
+   "query": "ustekinumab",
+   "found": true,
+   "rxcui": "847083",
+   "tty": "IN",
+   "name": "ustekinumab",
+   "ingredient_rxcui": "847083",
+   "ingredient": "ustekinumab"
+  },
+  "stelara": {
+   "query": "Stelara",
+   "found": true,
+   "rxcui": "853351",
+   "tty": "BN",
+   "name": "Stelara",
+   "ingredient_rxcui": "847083",
+   "ingredient": "ustekinumab"
+  },
+  "infliximab": {
+   "query": "infliximab",
+   "found": true,
+   "rxcui": "191831",
+   "tty": "IN",
+   "name": "infliximab",
+   "ingredient_rxcui": "191831",
+   "ingredient": "infliximab"
+  },
+  "apixaban": {
+   "query": "apixaban",
+   "found": true,
+   "rxcui": "1364430",
+   "tty": "IN",
+   "name": "apixaban",
+   "ingredient_rxcui": "1364430",
+   "ingredient": "apixaban"
+  },
+  "eliquis": {
+   "query": "Eliquis",
+   "found": true,
+   "rxcui": "1364436",
+   "tty": "BN",
+   "name": "Eliquis",
+   "ingredient_rxcui": "1364430",
+   "ingredient": "apixaban"
+  },
+  "methotrexate": {
+   "query": "methotrexate",
+   "found": true,
+   "rxcui": "6851",
+   "tty": "IN",
+   "name": "methotrexate",
+   "ingredient_rxcui": "6851",
+   "ingredient": "methotrexate"
+  },
+  "metformin": {
+   "query": "metformin",
+   "found": true,
+   "rxcui": "6809",
+   "tty": "IN",
+   "name": "metformin",
+   "ingredient_rxcui": "6809",
+   "ingredient": "metformin"
+  },
+  "ocrelizumab": {
+   "query": "ocrelizumab",
+   "found": true,
+   "rxcui": "1876366",
+   "tty": "IN",
+   "name": "ocrelizumab",
+   "ingredient_rxcui": "1876366",
+   "ingredient": "ocrelizumab"
+  },
+  "ocrevus": {
+   "query": "Ocrevus",
+   "found": true,
+   "rxcui": "1876381",
+   "tty": "BN",
+   "name": "Ocrevus",
+   "ingredient_rxcui": "1876366",
+   "ingredient": "ocrelizumab"
+  },
+  "adalimumab-adaz": {
+   "query": "adalimumab-adaz",
+   "found": true,
+   "rxcui": "2641642",
+   "tty": "PIN",
+   "name": "adalimumab-adaz",
+   "ingredient_rxcui": "327361",
+   "ingredient": "adalimumab"
+  },
+  "humera": {
+   "query": "Humera",
+   "found": false
+  }
+ }
+}

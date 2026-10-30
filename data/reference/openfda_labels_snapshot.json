@@ -1,0 +1,134 @@
+{
+ "_meta": {
+  "source": "openFDA Drug Label API (https://api.fda.gov/drug/label.json?search=openfda.brand_name:<BRAND>&limit=1)",
+  "fetched": "2026-10-29",
+  "note": "indications_excerpt = first ~900 characters of the label's INDICATIONS AND USAGE section as returned (whitespace normalized). indication_terms = condition keywords from that section, used for the on-label diagnosis check. The live client rebuilds both from the full section text."
+ },
+ "records": {
+  "327361": {
+   "ingredient": "adalimumab",
+   "brand": "HUMIRA",
+   "set_id": "4977567e-3525-44ac-9ff5-f1e74b053950",
+   "effective_time": "20251223",
+   "indications_excerpt": "1 INDICATIONS AND USAGE HUMIRA is a tumor necrosis factor (TNF) blocker indicated for: Reducing signs and symptoms, inducing major clinical response, inhibiting the progression of structural damage, and improving physical function in adult patients with moderately to severely active rheumatoid arthritis. (1.1) Reducing signs and symptoms of moderately to severely active polyarticular juvenile idiopathic arthritis in patients 2 years of age and older. (1.2) Reducing signs and symptoms, inhibiting the progression of structural damage, and improving physical function in adult patients with active psoriatic arthritis. (1.3) Reducing signs and symptoms in adult patients with active ankylosing spondylitis. (1.4) Treatment of moderately to severely active Crohn's disease in adults and pediatric patients 6 years of age and older. (1.5) Treatment of moderately to severely active ul",
+   "indication_terms": [
+    "rheumatoid arthritis",
+    "juvenile idiopathic arthritis",
+    "psoriatic arthritis",
+    "ankylosing spondylitis",
+    "crohn",
+    "ulcerative colitis",
+    "plaque psoriasis",
+    "hidradenitis suppurativa",
+    "uveitis"
+   ]
+  },
+  "1876376": {
+   "ingredient": "dupilumab",
+   "brand": "DUPIXENT",
+   "set_id": "595f437d-2729-40bb-9c62-c8ece1f82780",
+   "effective_time": "20260422",
+   "indications_excerpt": "1 INDICATIONS AND USAGE DUPIXENT is an interleukin-4 receptor alpha antagonist indicated: Atopic Dermatitis for the treatment of adult and pediatric patients aged 6 months and older with moderate-to-severe AD whose disease is not adequately controlled with topical prescription therapies or when those therapies are not advisable. DUPIXENT can be used with or without topical corticosteroids. (1.1) Asthma as an add-on maintenance treatment of adult and pediatric patients aged 6 years and older with moderate-to-severe asthma characterized by an eosinophilic phenotype or with oral corticosteroid dependent asthma. (1.2) Limitations of Use: Not for the relief of acute bronchospasm or status asthmaticus. (1.2) Chronic Rhinosinusitis with Nasal Polyps as an add-on maintenance treatment in adult and pediatric patients aged 12 years and older with inadequately controlled chronic rhinosinusiti",
+   "indication_terms": [
+    "atopic dermatitis",
+    "asthma",
+    "chronic rhinosinusitis with nasal polyps",
+    "eosinophilic esophagitis",
+    "prurigo nodularis",
+    "chronic obstructive pulmonary disease"
+   ]
+  },
+  "1991302": {
+   "ingredient": "semaglutide",
+   "brand": "OZEMPIC",
+   "set_id": "27f15fac-7d98-4114-a2ec-92494a91da98",
+   "effective_time": "20260130",
+   "indications_excerpt": "1 INDICATIONS AND USAGE RYBELSUS and OZEMPIC tablets are indicated: \u2022 as an adjunct to diet and exercise to improve glycemic control in adults with type 2 diabetes mellitus. \u2022 to reduce the risk of major adverse cardiovascular (CV) events (CV death, non-fatal myocardial infarction or non-fatal stroke) in adults with type 2 diabetes mellitus who are at high risk for these events.",
+   "indication_terms": [
+    "type 2 diabetes"
+   ],
+   "related_labels": {
+    "WEGOVY": {
+     "set_id": "f5e548d0-cc79-4c34-a3f5-e20a5b8b6564",
+     "effective_time": "20240423",
+     "indications_excerpt": "1 INDICATIONS AND USAGE WEGOVY is indicated in combination with a reduced calorie diet and increased physical activity: \u2022 to reduce the risk of major adverse cardiovascular events (cardiovascular death, non-fatal myocardial infarction, or non-fatal stroke) in adults with established cardiovascular disease and either obesity or overweight. \u2022 to reduce excess body weight and maintain weight reduction long term in: o Adults and pediatric patients aged 12 years and older with obesity o Adults with overweight in the presence of at least one weight-related comorbid condition.",
+     "indication_terms": [
+      "obesity",
+      "overweight",
+      "cardiovascular disease"
+     ]
+    }
+   }
+  },
+  "2601723": {
+   "ingredient": "tirzepatide",
+   "brand": "MOUNJARO",
+   "set_id": "0818426a-53eb-4db7-9609-bbae1e7a3964",
+   "effective_time": "20260729",
+   "indications_excerpt": "1 INDICATIONS AND USAGE MOUNJARO is indicated as an adjunct to diet and exercise to improve glycemic control in adults and pediatric patients 10 years of age and older with type 2 diabetes mellitus.",
+   "indication_terms": [
+    "type 2 diabetes"
+   ]
+  },
+  "2045613": {
+   "ingredient": "erenumab",
+   "brand": "AIMOVIG",
+   "set_id": "b998ed05-94b0-47fd-b28f-cddd1e128fd8",
+   "effective_time": "20260714",
+   "indications_excerpt": "1 INDICATIONS AND USAGE AIMOVIG is indicated for the preventive treatment of migraine in adults.",
+   "indication_terms": [
+    "migraine"
+   ]
+  },
+  "847083": {
+   "ingredient": "ustekinumab",
+   "brand": "STELARA",
+   "set_id": "c77a9664-e3bb-4023-b400-127aa53bca2b",
+   "effective_time": "20260908",
+   "indications_excerpt": "1 INDICATIONS AND USAGE STELARA is a human interleukin-12 and -23 antagonist indicated for the treatment of: Moderate to severe plaque psoriasis in adults and pediatric patients 6 years of age and older who are candidates for phototherapy or systemic therapy. (1.1) Active psoriatic arthritis in adults and pediatric patients 6 years of age and older. (1.2) Moderately to severely active Crohn's disease in adults and pediatric patients 2 years of age and older. (1.3) Moderately to severely active ulcerative colitis in adults and pediatric patients 2 years of age and older. (1.4)",
+   "indication_terms": [
+    "plaque psoriasis",
+    "psoriatic arthritis",
+    "crohn",
+    "ulcerative colitis"
+   ]
+  },
+  "191831": {
+   "ingredient": "infliximab",
+   "brand": "REMICADE",
+   "set_id": "a0a046c1-056d-45a9-bfd9-13b47c24f257",
+   "effective_time": "20250603",
+   "indications_excerpt": "1 INDICATIONS AND USAGE REMICADE is a tumor necrosis factor (TNF) blocker indicated for: Crohn's Disease: reducing signs and symptoms and inducing and maintaining clinical remission in adult patients with moderately to severely active disease who have had an inadequate response to conventional therapy. (1.1) reducing the number of draining enterocutaneous and rectovaginal fistulas and maintaining fistula closure in adult patients with fistulizing disease. (1.1) Pediatric Crohn's Disease: reducing signs and symptoms and inducing and maintaining clinical remission in pediatric patients 6 years of age and older with moderately to severely active disease who have had an inadequate response to conventional therapy. (1.2) Ulcerative Colitis: reducing signs and symptoms, inducing and maintaining clinical remission and mucosal healing, and eliminating corticosteroid use in adult patient",
+   "indication_terms": [
+    "crohn",
+    "ulcerative colitis",
+    "rheumatoid arthritis",
+    "ankylosing spondylitis",
+    "psoriatic arthritis",
+    "plaque psoriasis"
+   ]
+  },
+  "1364430": {
+   "ingredient": "apixaban",
+   "brand": "ELIQUIS",
+   "set_id": "1523ab32-2c2c-6501-e063-6394a90aa0b3",
+   "effective_time": "20250203",
+   "indications_excerpt": "1 INDICATIONS AND USAGE ELIQUIS is a factor Xa inhibitor indicated: to reduce the risk of stroke and systemic embolism in patients with nonvalvular atrial fibrillation. (1.1) for the prophylaxis of deep vein thrombosis (DVT), which may lead to pulmonary embolism (PE), in patients who have undergone hip or knee replacement surgery. (1.2) for the treatment of DVT and PE, and for the reduction in the risk of recurrent DVT and PE following initial therapy.",
+   "indication_terms": [
+    "atrial fibrillation",
+    "deep vein thrombosis",
+    "pulmonary embolism"
+   ]
+  },
+  "1876366": {
+   "ingredient": "ocrelizumab",
+   "brand": "OCREVUS",
+   "set_id": "9da42362-3bb5-4b83-b4bb-b59fd4e55f0d",
+   "effective_time": "20260514",
+   "indications_excerpt": "1 INDICATIONS AND USAGE OCREVUS is indicated for the treatment of: Relapsing forms of multiple sclerosis (MS), to include clinically isolated syndrome, relapsing-remitting disease, and active secondary progressive disease, in adults Primary progressive MS, in adults Relapsing-remitting MS, in pediatric patients 10 years of age and older who weigh 25 kg or more.",
+   "indication_terms": [
+    "multiple sclerosis"
+   ]
+  }
+ }
+}

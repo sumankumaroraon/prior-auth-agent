@@ -1,0 +1,107 @@
+{
+  "_meta": {
+    "plan": "Demo Health Plan (fictional)",
+    "version": "2026.10",
+    "note": "Illustrative utilization-management policy written for this portfolio project. It is modeled on the kinds of criteria payers publish (conservative-therapy duration, step therapy, specialist prescriber, diagnosis match) but is NOT any real payer's policy. Code descriptions are plain-language summaries.",
+    "regulatory_timeframes": {
+      "expedited_hours": 72,
+      "standard_days": 7,
+      "reference": "CMS Interoperability & Prior Authorization Final Rule (CMS-0057-F): impacted payers must send decisions within 72 hours for expedited and 7 calendar days for standard requests, beginning January 1, 2026."
+    },
+    "agent_authority": "The automated workflow may APPROVE, return NO-PA-REQUIRED, or PEND for missing information. It may never deny. Any request that might be denied goes to a licensed clinical reviewer."
+  },
+  "services": {
+    "73721": {"policy_id": "IMG-101", "name": "MRI knee/lower-extremity joint without contrast", "category": "imaging", "pa_required": true,
+      "criteria": [
+        {"id": "dx", "type": "dx_in", "prefixes": ["M17", "M23.2", "S83.2"], "text": "Diagnosis of knee osteoarthritis or meniscal derangement/tear"},
+        {"id": "conservative", "type": "min_value", "fact": "conservative_therapy_weeks", "threshold": 6, "waived_if_dx_prefix": ["S83"], "text": "At least 6 weeks of conservative therapy (PT, NSAIDs), unless acute injury"}
+      ]},
+    "72148": {"policy_id": "IMG-114", "name": "MRI lumbar spine without contrast", "category": "imaging", "pa_required": true,
+      "criteria": [
+        {"id": "dx", "type": "dx_in", "prefixes": ["M54.5", "M51.1", "M51.2"], "text": "Low back pain or lumbar disc disorder"},
+        {"id": "conservative", "type": "min_value", "fact": "conservative_therapy_weeks", "threshold": 6, "waived_if_fact": "red_flags", "text": "At least 6 weeks of conservative therapy unless red-flag symptoms are documented"}
+      ]},
+    "78815": {"policy_id": "IMG-150", "name": "PET/CT imaging, skull base to mid-thigh", "category": "imaging", "pa_required": true, "md_review_required": true,
+      "criteria": [
+        {"id": "dx", "type": "dx_in", "prefixes": ["C"], "text": "Known or suspected malignancy"}
+      ]},
+    "71250": {"policy_id": "IMG-000", "name": "CT chest without contrast", "category": "imaging", "pa_required": false},
+    "27447": {"policy_id": "SURG-210", "name": "Total knee arthroplasty", "category": "surgical", "pa_required": true,
+      "criteria": [
+        {"id": "dx", "type": "dx_in", "prefixes": ["M17"], "text": "Knee osteoarthritis"},
+        {"id": "conservative", "type": "min_value", "fact": "conservative_therapy_weeks", "threshold": 12, "text": "At least 12 weeks of failed conservative therapy"},
+        {"id": "bmi", "type": "max_value", "fact": "bmi", "threshold": 40, "text": "BMI below 40 (peri-operative risk)"}
+      ]},
+    "29881": {"policy_id": "SURG-225", "name": "Knee arthroscopy with meniscectomy", "category": "surgical", "pa_required": true,
+      "criteria": [
+        {"id": "dx", "type": "dx_in", "prefixes": ["M23.2", "S83.2"], "text": "Meniscal tear or derangement"},
+        {"id": "conservative", "type": "min_value", "fact": "conservative_therapy_weeks", "threshold": 6, "waived_if_dx_prefix": ["S83"], "text": "At least 6 weeks of conservative therapy unless acute injury"}
+      ]},
+    "E0601": {"policy_id": "DME-310", "name": "CPAP device", "category": "dme", "pa_required": true,
+      "criteria": [
+        {"id": "dx", "type": "dx_in", "prefixes": ["G47.33"], "text": "Obstructive sleep apnea"},
+        {"id": "ahi", "type": "any_of", "text": "AHI >= 15, or AHI >= 5 with documented symptoms",
+         "options": [
+           {"type": "min_value", "fact": "ahi", "threshold": 15},
+           {"type": "all_of", "options": [{"type": "min_value", "fact": "ahi", "threshold": 5}, {"type": "is_true", "fact": "osa_symptoms"}]}
+         ]}
+      ]},
+    "K0823": {"policy_id": "DME-340", "name": "Power wheelchair, group 2", "category": "dme", "pa_required": true, "md_review_required": true,
+      "criteria": [
+        {"id": "dx", "type": "dx_in", "prefixes": ["G12", "G35", "M", "Z99"], "text": "Mobility-limiting condition"}
+      ]},
+    "95810": {"policy_id": "SLP-401", "name": "In-lab polysomnography", "category": "sleep_study", "pa_required": true,
+      "criteria": [
+        {"id": "dx", "type": "dx_in", "prefixes": ["G47.3"], "text": "Suspected sleep apnea"},
+        {"id": "hsat", "type": "is_true", "fact": "hsat_inconclusive", "text": "Home sleep apnea test was inconclusive or is contraindicated"}
+      ]},
+    "97110": {"policy_id": "PT-000", "name": "Therapeutic exercise (physical therapy), first 12 visits", "category": "therapy", "pa_required": false}
+  },
+  "drugs": {
+    "327361": {"policy_id": "RX-501", "name": "adalimumab (Humira and biosimilars)", "category": "pharmacy", "pa_required": true,
+      "criteria": [
+        {"id": "dx", "type": "dx_in", "prefixes": ["M05", "M06", "L40", "K50", "K51"], "text": "RA, psoriasis/psoriatic arthritis, Crohn's disease or ulcerative colitis"},
+        {"id": "prescriber", "type": "prescriber_specialty_in", "specialties": ["Rheumatology", "Dermatology", "Gastroenterology"], "text": "Prescribed by or in consultation with a rheumatologist, dermatologist or gastroenterologist"},
+        {"id": "step", "type": "step_therapy", "applies_if_dx_prefix": ["M05", "M06"], "required_any": ["methotrexate"], "min_weeks": 12, "text": "RA: trial of methotrexate for at least 12 weeks"}
+      ]},
+    "847083": {"policy_id": "RX-505", "name": "ustekinumab (Stelara and biosimilars)", "category": "pharmacy", "pa_required": true,
+      "criteria": [
+        {"id": "dx", "type": "dx_in", "prefixes": ["L40", "K50", "K51"], "text": "Psoriasis/psoriatic arthritis, Crohn's disease or ulcerative colitis"},
+        {"id": "prescriber", "type": "prescriber_specialty_in", "specialties": ["Dermatology", "Gastroenterology", "Rheumatology"], "text": "Specialist prescriber"},
+        {"id": "step", "type": "step_therapy", "required_any": ["methotrexate", "adalimumab", "infliximab", "phototherapy"], "min_weeks": 12, "text": "Trial of a conventional systemic agent, TNF inhibitor or phototherapy for at least 12 weeks"}
+      ]},
+    "191831": {"policy_id": "RX-503", "name": "infliximab (Remicade and biosimilars)", "category": "pharmacy", "pa_required": true,
+      "criteria": [
+        {"id": "dx", "type": "dx_in", "prefixes": ["K50", "K51", "M05", "M06", "L40"], "text": "Crohn's, UC, RA or psoriasis"},
+        {"id": "prescriber", "type": "prescriber_specialty_in", "specialties": ["Gastroenterology", "Rheumatology", "Dermatology"], "text": "Specialist prescriber"}
+      ]},
+    "1876376": {"policy_id": "RX-520", "name": "dupilumab (Dupixent)", "category": "pharmacy", "pa_required": true,
+      "criteria": [
+        {"id": "dx", "type": "dx_in", "prefixes": ["L20", "J45.4", "J45.5"], "text": "Moderate-to-severe atopic dermatitis or moderate-to-severe persistent asthma"},
+        {"id": "prescriber", "type": "prescriber_specialty_in", "specialties": ["Dermatology", "Allergy & Immunology", "Allergy/Immunology"], "text": "Dermatologist or allergist/immunologist prescriber"},
+        {"id": "step", "type": "step_therapy", "applies_if_dx_prefix": ["L20"], "required_any": ["topical corticosteroid", "tacrolimus"], "min_weeks": 4, "text": "Atopic dermatitis: failed at least 4 weeks of topical prescription therapy"}
+      ]},
+    "1991302": {"policy_id": "RX-540", "name": "semaglutide (Ozempic)", "category": "pharmacy", "pa_required": true,
+      "criteria": [
+        {"id": "exclusion", "type": "benefit_exclusion", "dx_prefixes": ["E66", "Z68"], "text": "Plan excludes drugs used for weight loss"},
+        {"id": "dx", "type": "dx_in", "prefixes": ["E11"], "text": "Type 2 diabetes mellitus"},
+        {"id": "step", "type": "step_therapy", "required_any": ["metformin"], "min_weeks": 12, "text": "Trial of metformin for at least 12 weeks (or documented contraindication)"}
+      ]},
+    "2601723": {"policy_id": "RX-541", "name": "tirzepatide (Mounjaro)", "category": "pharmacy", "pa_required": true,
+      "criteria": [
+        {"id": "exclusion", "type": "benefit_exclusion", "dx_prefixes": ["E66", "Z68"], "text": "Plan excludes drugs used for weight loss"},
+        {"id": "dx", "type": "dx_in", "prefixes": ["E11"], "text": "Type 2 diabetes mellitus"},
+        {"id": "step", "type": "step_therapy", "required_any": ["metformin"], "min_weeks": 12, "text": "Trial of metformin for at least 12 weeks"}
+      ]},
+    "2045613": {"policy_id": "RX-560", "name": "erenumab (Aimovig)", "category": "pharmacy", "pa_required": true,
+      "criteria": [
+        {"id": "dx", "type": "dx_in", "prefixes": ["G43"], "text": "Migraine"},
+        {"id": "step", "type": "step_count", "min_count": 2, "min_weeks": 8, "text": "Failed at least 2 preventive medications, each for at least 8 weeks"}
+      ]},
+    "1876366": {"policy_id": "RX-580", "name": "ocrelizumab (Ocrevus)", "category": "pharmacy", "pa_required": true, "md_review_required": true,
+      "criteria": [
+        {"id": "dx", "type": "dx_in", "prefixes": ["G35"], "text": "Multiple sclerosis"}
+      ]},
+    "1364430": {"policy_id": "RX-000", "name": "apixaban (Eliquis), preferred formulary", "category": "pharmacy", "pa_required": false}
+  }
+}
